@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Talents | Hành Trình Hợp Tác Tuyển Dụng</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Áp dụng font Oswald cho toàn bộ ứng dụng */
+        body {
+            font-family: 'Oswald', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Tùy chỉnh thanh cuộn để tinh tế hơn */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a237e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5C6BC0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF9800;
+        }
+        
+        /* Hiệu ứng chuyển động mượt mà cho accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-content.open {
+            max-height: 1200px; /* Tăng giá trị để chứa đủ nội dung */
+            transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Hiệu ứng cho các thẻ khi hover */
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        // Cấu hình màu sắc tùy chỉnh cho Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bt-orange': '#FF9800',
+                        'bt-green': '#009688',
+                        'bt-blue-light': '#5C6BC0',
+                        'bt-blue-dark': '#1a237e',
+                        'bt-background': '#0f172a' // Một màu nền tối hơn và hiện đại hơn
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bt-background text-gray-200 antialiased">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="text-5xl md:text-7xl font-bold text-bt-orange tracking-wider uppercase">Build Talents</h1>
+            <h2 class="text-xl md:text-3xl text-bt-blue-light mt-2 tracking-wide font-light">A Strategic Journey in Talent Acquisition</h2>
+            <p class="text-lg text-gray-400 font-light mt-6 max-w-3xl mx-auto">
+                Một hành trình hợp tác tuyển dụng được trình bày trực quan. Chúng tôi chuyển hóa các điều khoản phức tạp thành một quy trình chiến lược, minh bạch và hiệu quả, dành riêng cho các nhà lãnh đạo.
+            </p>
+        </header>
+
+        <!-- Main Process Flow -->
+        <main class="relative max-w-5xl mx-auto">
+            <!-- Trục thời gian (Timeline) -->
+            <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-bt-blue-light/20" aria-hidden="true"></div>
+
+            <div id="process-flow" class="space-y-12">
+                
+                <!-- Step 1: Kick-off & Alignment -->
+                <div class="process-step relative">
+                    <div class="md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:text-right md:pr-12">
+                            <h3 class="text-2xl font-semibold text-bt-orange">GIAI ĐOẠN 1</h3>
+                            <p class="text-3xl font-bold tracking-wide text-white">KHỞI TẠO & THỐNG NHẤT</p>
+                            <p class="mt-2 text-bt-blue-light">Xây dựng nền tảng cho sự thành công.</p>
+                        </div>
+                         <div class="relative">
+                            <!-- Nút tròn trên timeline -->
+                            <div class="absolute -left-10 top-0 md:left-auto md:-right-[78px] h-8 w-8 rounded-full bg-bt-orange border-4 border-bt-background flex items-center justify-center">
+                                <span class="h-2 w-2 rounded-full bg-bt-background"></span>
+                            </div>
+                            <div class="accordion-header process-card cursor-pointer bg-bt-blue-dark/50 border border-bt-blue-light/30 rounded-lg p-6 flex justify-between items-center hover:border-bt-orange transition-all duration-300">
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-bt-blue-light/10 p-3 rounded-full">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bt-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                    </div>
+                                    <span class="text-xl font-semibold">Xem chi tiết quy trình</span>
+                                </div>
+                                <svg class="w-7 h-7 transform transition-transform duration-500 arrow-icon text-bt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="accordion-content md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-2">
+                             <div class="bg-gray-800/20 p-6 mt-4 rounded-lg border-l-4 border-bt-green">
+                                <h4 class="font-bold text-lg text-bt-green mb-4">MỤC TIÊU: Thiết lập kế hoạch tuyển dụng rõ ràng.</h4>
+                                <div class="space-y-4 text-gray-300 font-light">
+                                    <div>
+                                        <h5 class="font-semibold text-white mb-1">Trách nhiệm của Đối tác (Bên B):</h5>
+                                        <ul class="list-disc list-inside space-y-1 pl-2">
+                                            <li>Cung cấp Mô tả Công việc chi tiết (vị trí, lương, phúc lợi).</li>
+                                            <li>Xác định ngày bắt đầu tuyển dụng mong muốn.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-white mb-1">Build Talents (Bên A) sẽ:</h5>
+                                        <ul class="list-disc list-inside space-y-1 pl-2">
+                                            <li>Chủ động thảo luận để hoàn thiện kế hoạch tuyển dụng.</li>
+                                            <li>Tư vấn về mức lương và phúc lợi cạnh tranh trên thị trường.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Sourcing & Presentation -->
+                <div class="process-step relative">
+                    <div class="md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-2 md:pl-12">
+                             <h3 class="text-2xl font-semibold text-bt-orange">GIAI ĐOẠN 2</h3>
+                             <p class="text-3xl font-bold tracking-wide text-white">SOURCING & PRESENTATION</p>
+                             <p class="mt-2 text-bt-blue-light">Khám phá những nhân tài tiềm năng.</p>
+                        </div>
+                         <div class="relative md:text-right">
+                             <div class="absolute -left-10 top-0 md:left-auto md:-right-[30px] h-8 w-8 rounded-full bg-bt-orange border-4 border-bt-background flex items-center justify-center">
+                                <span class="h-2 w-2 rounded-full bg-bt-background"></span>
+                            </div>
+                            <div class="accordion-header process-card cursor-pointer bg-bt-blue-dark/50 border border-bt-blue-light/30 rounded-lg p-6 flex justify-between items-center hover:border-bt-orange transition-all duration-300 mt-4 md:mt-0">
+                                <svg class="w-7 h-7 transform transition-transform duration-500 arrow-icon text-bt-orange order-last" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <div class="flex items-center space-x-4">
+                                     <div class="bg-bt-blue-light/10 p-3 rounded-full">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bt-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.176-5.97M15 21h6m-6-1a6 6 0 00-6-6m6 6v1m0-13a4 4 0 110 5.292" /></svg>
+                                    </div>
+                                    <span class="text-xl font-semibold">Xem các mốc thời gian</span>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="accordion-content md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-1 md:pr-12">
+                            <div class="bg-gray-800/20 p-6 mt-4 rounded-lg border-l-4 border-bt-orange">
+                                <h4 class="font-bold text-lg text-bt-orange mb-4">CÁC MỐC THỜI GIAN QUAN TRỌNG</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                     <div class="bg-bt-orange/10 p-4 rounded-lg text-center">
+                                        <p class="text-3xl font-bold text-bt-orange">7-15</p>
+                                        <p class="text-sm text-gray-300">ngày làm việc để gửi danh sách ứng viên</p>
+                                    </div>
+                                     <div class="bg-bt-orange/10 p-4 rounded-lg text-center">
+                                        <p class="text-3xl font-bold text-bt-orange">24</p>
+                                        <p class="text-sm text-gray-300">giờ để Đối tác phản hồi về việc trùng lặp</p>
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-sm text-gray-400 font-light">Lưu ý: Nếu Đối tác không phản hồi trong 24 giờ, ứng viên được coi là do Build Talents giới thiệu và sẽ tính phí nếu tuyển dụng thành công.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Interview & Selection -->
+                <div class="process-step relative">
+                     <div class="md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:text-right md:pr-12">
+                            <h3 class="text-2xl font-semibold text-bt-orange">GIAI ĐOẠN 3</h3>
+                            <p class="text-3xl font-bold tracking-wide text-white">PHỎNG VẤN & TUYỂN CHỌN</p>
+                            <p class="mt-2 text-bt-blue-light">Tìm kiếm sự phù hợp hoàn hảo.</p>
+                        </div>
+                         <div class="relative">
+                            <div class="absolute -left-10 top-0 md:left-auto md:-right-[78px] h-8 w-8 rounded-full bg-bt-orange border-4 border-bt-background flex items-center justify-center">
+                                <span class="h-2 w-2 rounded-full bg-bt-background"></span>
+                            </div>
+                            <div class="accordion-header process-card cursor-pointer bg-bt-blue-dark/50 border border-bt-blue-light/30 rounded-lg p-6 flex justify-between items-center hover:border-bt-orange transition-all duration-300 mt-4 md:mt-0">
+                               <div class="flex items-center space-x-4">
+                                     <div class="bg-bt-blue-light/10 p-3 rounded-full">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bt-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                    </div>
+                                    <span class="text-xl font-semibold">Phân chia trách nhiệm</span>
+                                </div>
+                                <svg class="w-7 h-7 transform transition-transform duration-500 arrow-icon text-bt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="accordion-content md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-2">
+                             <div class="bg-gray-800/20 p-6 mt-4 rounded-lg border-l-4 border-bt-blue-light">
+                                <h4 class="font-bold text-lg text-bt-blue-light mb-4">MỤC TIÊU: Quy trình phỏng vấn hiệu quả và minh bạch.</h4>
+                                 <div class="space-y-4 text-gray-300 font-light">
+                                    <div>
+                                        <h5 class="font-semibold text-white mb-1">Build Talents (Bên A) sẽ:</h5>
+                                        <ul class="list-disc list-inside space-y-1 pl-2">
+                                            <li>Hỗ trợ tổ chức, sắp xếp các cuộc phỏng vấn.</li>
+                                            <li>Thảo luận với hai bên sau phỏng vấn để đánh giá mức độ quan tâm.</li>
+                                            <li>Hỗ trợ đàm phán thư mời làm việc (offer).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-white mb-1">Trách nhiệm của Đối tác (Bên B):</h5>
+                                        <ul class="list-disc list-inside space-y-1 pl-2">
+                                            <li>Xác nhận ứng viên được chọn phỏng vấn qua văn bản/email.</li>
+                                            <li>Cập nhật tình hình phỏng vấn cho Bên A <strong class="text-bt-blue-light">hàng tuần</strong>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4, 5, 6 follow the same new structure -->
+                
+                <!-- Step 4: Offer & Onboarding -->
+                 <div class="process-step relative">
+                    <div class="md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-2 md:pl-12">
+                             <h3 class="text-2xl font-semibold text-bt-orange">GIAI ĐOẠN 4</h3>
+                             <p class="text-3xl font-bold tracking-wide text-white">OFFER & ONBOARDING</p>
+                             <p class="mt-2 text-bt-blue-light">Chào đón thành viên mới.</p>
+                        </div>
+                         <div class="relative md:text-right">
+                             <div class="absolute -left-10 top-0 md:left-auto md:-right-[30px] h-8 w-8 rounded-full bg-bt-orange border-4 border-bt-background flex items-center justify-center">
+                                <span class="h-2 w-2 rounded-full bg-bt-background"></span>
+                            </div>
+                            <div class="accordion-header process-card cursor-pointer bg-bt-blue-dark/50 border border-bt-blue-light/30 rounded-lg p-6 flex justify-between items-center hover:border-bt-orange transition-all duration-300 mt-4 md:mt-0">
+                                <svg class="w-7 h-7 transform transition-transform duration-500 arrow-icon text-bt-orange order-last" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <div class="flex items-center space-x-4">
+                                     <div class="bg-bt-blue-light/10 p-3 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bt-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    </div>
+                                    <span class="text-xl font-semibold">Hoàn tất tuyển dụng</span>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="accordion-content md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-1 md:pr-12">
+                             <div class="bg-gray-800/20 p-6 mt-4 rounded-lg border-l-4 border-bt-green">
+                                <h4 class="font-bold text-lg text-bt-green mb-4">MỤC TIÊU: Hoàn tất việc tuyển dụng và bắt đầu hội nhập.</h4>
+                                <p class="mb-4 text-gray-300 font-light">Dịch vụ giới thiệu được xem là hoàn thành khi ứng viên bắt đầu làm việc.</p>
+                                <div class="bg-bt-orange/10 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-white">Phí Hủy Offer</h5>
+                                    <p class="text-gray-300 font-light">Nếu Đối tác hủy thư mời làm việc, phí hủy là <strong class="text-bt-orange text-xl">20%</strong> tổng phí dịch vụ.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="font-semibold text-white mb-1">Trách nhiệm của Đối tác (Bên B):</h5>
+                                    <ul class="list-disc list-inside space-y-1 pl-2 font-light">
+                                        <li>Thông báo thông tin tuyển dụng cho Bên A trong vòng <strong class="text-bt-orange">24 giờ</strong> sau khi gửi offer.</li>
+                                        <li>Ký "Biên bản hoàn thành công việc" trong <strong class="text-bt-orange">7 ngày làm việc</strong> kể từ khi ứng viên bắt đầu thử việc.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Invoicing & Payment -->
+                <div class="process-step relative">
+                     <div class="md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:text-right md:pr-12">
+                            <h3 class="text-2xl font-semibold text-bt-orange">GIAI ĐOẠN 5</h3>
+                            <p class="text-3xl font-bold tracking-wide text-white">THANH TOÁN & HOÀN TẤT</p>
+                            <p class="mt-2 text-bt-blue-light">Hoàn tất các nghĩa vụ tài chính.</p>
+                        </div>
+                         <div class="relative">
+                            <div class="absolute -left-10 top-0 md:left-auto md:-right-[78px] h-8 w-8 rounded-full bg-bt-orange border-4 border-bt-background flex items-center justify-center">
+                                <span class="h-2 w-2 rounded-full bg-bt-background"></span>
+                            </div>
+                            <div class="accordion-header process-card cursor-pointer bg-bt-blue-dark/50 border border-bt-blue-light/30 rounded-lg p-6 flex justify-between items-center hover:border-bt-orange transition-all duration-300 mt-4 md:mt-0">
+                               <div class="flex items-center space-x-4">
+                                     <div class="bg-bt-blue-light/10 p-3 rounded-full">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bt-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    </div>
+                                    <span class="text-xl font-semibold">Chi phí dịch vụ</span>
+                                </div>
+                                <svg class="w-7 h-7 transform transition-transform duration-500 arrow-icon text-bt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="accordion-content md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-2">
+                            <div class="bg-gray-800/20 p-6 mt-4 rounded-lg border-l-4 border-bt-orange">
+                                <h4 class="font-bold text-lg text-bt-orange mb-4">CHI PHÍ DỊCH VỤ VÀ ĐIỀU KHOẢN</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-bt-orange/10 p-4 rounded-lg">
+                                        <h5 class="font-semibold text-white">Phí Dịch Vụ</h5>
+                                        <p class="text-3xl font-bold text-bt-orange">200%</p>
+                                        <p class="text-gray-300 font-light">thu nhập gross tháng của ứng viên thành công.</p>
+                                        <p class="text-xs text-gray-400 mt-2 font-light">Tối thiểu 40tr (Quản lý) và 80tr (Giám đốc), chưa gồm VAT.</p>
+                                    </div>
+                                    <div class="bg-bt-blue-light/10 p-4 rounded-lg">
+                                        <h5 class="font-semibold text-white">Thời Hạn Thanh Toán</h5>
+                                        <p class="text-3xl font-bold text-bt-blue-light">2 Tuần</p>
+                                        <p class="text-gray-300 font-light text-sm">Thanh toán 100% tổng phí dịch vụ kể từ ngày ứng viên nhận việc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Guarantee & Follow-up -->
+                <div class="process-step relative">
+                    <div class="md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-2 md:pl-12">
+                             <h3 class="text-2xl font-semibold text-bt-orange">GIAI ĐOẠN 6</h3>
+                             <p class="text-3xl font-bold tracking-wide text-white">BẢO HÀNH & HỖ TRỢ</p>
+                             <p class="mt-2 text-bt-blue-light">Cam kết cho sự thành công dài lâu.</p>
+                        </div>
+                         <div class="relative md:text-right">
+                             <div class="absolute -left-10 top-0 md:left-auto md:-right-[30px] h-8 w-8 rounded-full bg-bt-orange border-4 border-bt-background flex items-center justify-center">
+                                <span class="h-2 w-2 rounded-full bg-bt-background"></span>
+                            </div>
+                            <div class="accordion-header process-card cursor-pointer bg-bt-blue-dark/50 border border-bt-blue-light/30 rounded-lg p-6 flex justify-between items-center hover:border-bt-orange transition-all duration-300 mt-4 md:mt-0">
+                                <svg class="w-7 h-7 transform transition-transform duration-500 arrow-icon text-bt-orange order-last" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <div class="flex items-center space-x-4">
+                                     <div class="bg-bt-blue-light/10 p-3 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bt-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                    </div>
+                                    <span class="text-xl font-semibold">Chính sách bảo hành</span>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="accordion-content md:grid md:grid-cols-2 md:gap-12">
+                        <div class="md:col-start-1 md:pr-12">
+                             <div class="bg-gray-800/20 p-6 mt-4 rounded-lg border-l-4 border-bt-green">
+                                <h4 class="font-bold text-lg text-bt-green mb-4">ĐIỀU KHOẢN BẢO HÀNH DỊCH VỤ</h4>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-bt-green/10 p-4 rounded-lg">
+                                        <h5 class="font-semibold text-white">Thời gian bảo hành</h5>
+                                        <p class="text-3xl font-bold text-bt-green">60 ngày</p>
+                                        <p class="text-gray-300 font-light">Nếu ứng viên nghỉ, chúng tôi sẽ tìm người thay thế <strong class="text-white">miễn phí 01 lần</strong>.</p>
+                                    </div>
+                                     <div class="bg-bt-green/10 p-4 rounded-lg">
+                                        <h5 class="font-semibold text-white">Hoàn phí</h5>
+                                        <p class="text-3xl font-bold text-bt-green">50%</p>
+                                        <p class="text-gray-300 font-light">Nếu không tìm được ứng viên thay thế phù hợp trong <strong class="text-white">2 tháng</strong>.</p>
+                                    </div>
+                                </div>
+                                 <p class="mt-4 text-sm text-gray-400 font-light">Lưu ý: Bảo hành không áp dụng khi ứng viên nghỉ do thay đổi cơ cấu, cắt giảm biên chế, hoặc sa thải không có lý do chính đáng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 mt-16 border-t border-bt-blue-light/10">
+        <p class="text-xl text-bt-blue-light font-light">Rosie Đào Hạnh Giang</p>
+        <p class="text-bt-orange tracking-widest mt-1">CEO BUILD TALENTS</p>
+    </footer>
+
+    <script>
+        // Vanilla JavaScript cho chức năng accordion
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const content = this.closest('.process-step').querySelector('.accordion-content');
+                    const arrow = this.querySelector('.arrow-icon');
+                    const isOpen = content.classList.contains('open');
+
+                    // Đóng tất cả các accordion khác
+                    document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                        if (openContent !== content) {
+                            openContent.classList.remove('open');
+                            const otherArrow = openContent.closest('.process-step').querySelector('.arrow-icon');
+                            if (otherArrow) {
+                                otherArrow.classList.remove('rotate-180');
+                            }
+                        }
+                    });
+
+                    // Bật/tắt accordion hiện tại
+                    if (!isOpen) {
+                        content.classList.add('open');
+                        arrow.classList.add('rotate-180');
+                    } else {
+                        content.classList.remove('open');
+                        arrow.classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
